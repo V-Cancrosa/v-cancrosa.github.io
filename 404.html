@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>V Cancrosa</title>
+<script>
+  // Zły adres na domenie: popraw wielkość liter w nazwie strony (np. /v_cancrosa_entertainment/ → /V_Cancrosa_Entertainment/),
+  // a wszystko inne odeślij do postaci — wejścia głównego.
+  (function () {
+    var SITES = ["V_Cancrosa-One-and-Fursonas", "V_Cancrosa_Entertainment", "V_Cancrosa-YouTube-Create"];
+    var parts = location.pathname.split("/");
+    var first = (parts[1] || "").toLowerCase();
+    for (var i = 0; i < SITES.length; i++) {
+      if (SITES[i].toLowerCase() === first && parts[1] !== SITES[i]) {
+        parts[1] = SITES[i];
+        location.replace(parts.join("/") + location.search + location.hash);
+        return;
+      }
+    }
+    location.replace("/V_Cancrosa-One-and-Fursonas/");
+  })();
+</script>
+</head>
+<body style="background:#07080b;color:#ece3d3;font:15px system-ui;text-align:center;padding-top:30vh">
+  <p><a style="color:#e6ac60" href="/V_Cancrosa-One-and-Fursonas/">V Cancrosa →</a></p>
+</body>
+</html>
